@@ -21,6 +21,7 @@ graph TD;
 | **Gateway** | 모든 API 요청 진입점, 인증/인가 및 라우팅 처리 | [nexon-assignment-gateway]() |
 | **Auth**    | 사용자 등록/로그인, 역할 관리, JWT 발급 | [nexon-assignment-auth]() |
 | **Event**   | 이벤트 등록, 보상 정의, 보상 요청 처리 및 이력 관리 | [nexon-assignment-event]() |
+| **NestJS Template** | NestJS 기반 MSA 프로젝트의 공통 템플릿 저장소 | [nexon-assignment-nestjs-temp](https://github.com/argon1025/nexon-assignment-nestjs-temp) 
 
 > 🧠 왜 Polyrepo로 구성되었나요?
 >> 본 프로젝트는 단순한 과제가 아닌 **실제 기업에서 운영 가능한 구조** 설계를 목표로 합니다.  
