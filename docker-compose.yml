@@ -1,0 +1,64 @@
+version: "3.8"
+
+services:
+  gateway:
+    container_name: nexon-gateway
+    build:
+      context: ../nexon-assignment-gateway
+    ports:
+      - "80:80"
+    depends_on:
+      - auth
+      - event
+    networks:
+      - nexon-network
+
+  auth:
+    container_name: nexon-auth
+    build:
+      context: ../nexon-assignment-auth
+    ports:
+      - "8080:8080"
+    depends_on:
+      - auth-mongo
+    networks:
+      - nexon-network
+
+  event:
+    container_name: nexon-event
+    build:
+      context: ../nexon-assignment-event
+    ports:
+      - "8081:8081"
+    depends_on:
+      - event-mongo
+    networks:
+      - nexon-network
+
+  auth-mongo:
+    container_name: auth-mongo
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - auth-mongo-data:/data/db
+    networks:
+      - nexon-network
+
+  event-mongo:
+    container_name: event-mongo
+    image: mongo:6.0
+    ports:
+      - "27018:27017"
+    volumes:
+      - event-mongo-data:/data/db
+    networks:
+      - nexon-network
+
+volumes:
+  auth-mongo-data:
+  event-mongo-data:
+
+networks:
+  nexon-network:
+    driver: bridge
