@@ -102,16 +102,17 @@ Github Projects Kanban을 사용하여 이슈를 생성 및 트래킹 합니다.
 
 ## 🚀 Docker-compose 프로젝트 통합실행 가이드
 
-이 저장소의 DockerCompose는 Auth, Event, Gateway 마이크로서비스를 통합 실행할 수 있도록 구성되어 있습니다.
+이 저장소의 DockerCompose는 Auth, Event, Gateway 마이크로서비스를 통합 실행할 수 있도록 구성되어 있습니다.  
 개발자가 로컬에서 전체 MSA 흐름을 테스트할 수 있는 환경을 빠르게 구성하는 데 목적이 있습니다.
 
 > 🔗 통합 실행 외에 개별 서비스 실행이 필요한 경우에는 각 레포의 README.md를 참고하세요.
 
 ### 1. 필요한 저장소 복제
 
-아래 3개의 레포지토리를 동일한 디렉토리에 위치하도록 클론합니다.
+아래 4개의 레포지토리를 동일한 디렉토리에 위치하도록 클론합니다.
 
 ```
+$ git clone https://github.com/argon1025/nexon-assignment.git
 $ git clone https://github.com/argon1025/nexon-assignment-auth.git
 $ git clone https://github.com/argon1025/nexon-assignment-event.git
 $ git clone https://github.com/argon1025/nexon-assignment-gateway.git
@@ -127,9 +128,10 @@ $ ls
 ### 2. docker-compose 빌드
 
 ```
+$ cd nexon-assignment
 $ docker-compose build --build-arg NODE_ENV=docker
 ```
-
+`nexon-assignment` 해당 레포지토리로 이동 후  
 각 서비스(NestJS 앱) 및 MongoDB를 한 번에 빌드합니다.
 최초 실행 또는 코드 변경 시 수행합니다.
 
