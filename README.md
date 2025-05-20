@@ -95,6 +95,7 @@ Github Projects Kanban을 사용하여 이슈를 생성 및 트래킹 합니다.
 
 ### ⚙️ 환경 변수
 
+- 모든 환경의 시간대는 `UTC`로 통일합니다.
 - 환경별 `.env` 파일(`.env.local`, `.env.dev`, `.env.prod`)을 통해 설정을 분리합니다.
   > NestJS ConfigModule을 사용합니다.
 
@@ -131,6 +132,7 @@ $ ls
 $ cd nexon-assignment
 $ docker-compose build --build-arg NODE_ENV=docker
 ```
+
 `nexon-assignment` 해당 레포지토리로 이동 후  
 각 서비스(NestJS 앱) 및 MongoDB를 한 번에 빌드합니다.
 최초 실행 또는 코드 변경 시 수행합니다.
